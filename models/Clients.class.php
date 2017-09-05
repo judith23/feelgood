@@ -50,35 +50,60 @@ class Clients
 
 	public function setPseudo($pseudo)
 	{
-		$this->pseudo = $pseudo;
+		if (strlen($pseudo) >= 4 && strlen($pseudo) <= 65)
+			$this->pseudo = $pseudo;
+		else
+			throw new Exception ("Pseudo invalide (la taille doit être compris entre 4 et 65 caractères)");
 	}
 	public function setMdp($mdp)
 	{
-		$this->mdp = $mdp;
+		if (strlen($mdp) >= 4 && strlen($mdp) <= 255)
+			$this->mdp = $mdp;
+		else
+			throw new Exception("Mdp invalide (la taille doit être compris entre 4 et 255 caractères)");
 	}
 	public function setNom($nom)
 	{
-		$this->nom = $nom;
+		if (strlen($nom) >= 4 && strlen($nom) <= 63)
+			$this->nom = $nom;
+		else
+			throw new Exception("Nom invalide (la taille doit être compris entre 4 et 63 caractères)");
+			
 	}
 	public function setPrenom($prenom)
 	{
-		$this->prenom = $prenom;
+		if (strlen($prenom) >= 4 && strlen($prenom) <= 63)
+			$this->prenom = $prenom;
+		else
+			throw new Exception("Prenom invalide (la taille doit être compris entre 4 et 63 caractères)");
 	}
 	public function setAdresse($adresse)
 	{
-		$this->adresse = $adresse;
+		if (strlen($adresse) >= 4 && strlen($adresse) <= 255)
+			$this->adresse = $adresse;
+		else
+			throw new Exception("Adresse invalide (la taille doit être compris entre 4 et 63 caractères)");
 	}
 	public function setVille($ville)
 	{
-		$this->ville = $ville;
+		if (strlen($ville) >= 2 && strlen($ville) <= 63)
+			$this->ville = $ville;
+		else
+			throw new Exception("Ville invalide (la taille doit être compris entre 2 et 63 caractères)");
 	}
 	public function setTelephone($telephone)
 	{
-		$this->telephone = $telephone;
+		if (strlen($telephone) >= 9 && strlen($telphone) <= 10)
+			$this->telephone = $telephone;
+		else
+			throw new Exception("Telephone invalide (la taille doit être compris entre 9 et 10 caractères)");
 	}
 	public function setEmail($email)
 	{
-		$this->email = $email;
+		if (strlen($email) >= 10 && strlen($email) <= 63)
+			$this->email = $email;
+		else
+			throw new Exception("Email invalide (la taille doit être compris entre 10 et 63 caractères)");
 	}
 
 }

@@ -2,10 +2,10 @@
 class Commentaires
 {
 	private $id;
-	private $idProduit;
+	private $id_produit;
 	private $description;
 	private $date;
-	private $idAuteur;
+	private $id_auteur;
 
 	public function getId()
 	{
@@ -13,7 +13,7 @@ class Commentaires
 	}
 	public function getIdProduit()
 	{
-		return $this->idProduit;
+		return $this->id_produit;
 	}
 	public function getDescription()
 	{
@@ -25,23 +25,22 @@ class Commentaires
 	}
 	public function getIdAuteur()
 	{
-		return $this->idAuteur;
+		return $this->id_auteur;
 	}
 	
 
-	public function setIdProduit($idProduit)
+	public function setIdProduit($id_produit)
 	{
-		$this->idProduit = $idProduit;
+		$this->id_produit = $id_produit;
 	}
 	public function setDescription($description)
 	{
 		$this->description = $description;
 	}
-	public function setIdAuteur($idAuteur)
+	public function setIdAuteur($id_auteur)
 	{
-		$this->idAuteur = $idAuteur;
+		$this->id_auteur = $id_auteur;
 	}
 	
-
 }
 ?>

@@ -5,9 +5,9 @@ class Commandes
 	private $nom;
 	private $prenom;
 	private $email;
-	private $adresseLivraison;
+	private $adresse_livraison;
 	private $date;
-	private $idClient;
+	private $id_client;
 
 	public function getId()
 	{
@@ -27,7 +27,7 @@ class Commandes
 	}
 	public function getAdresseLivraison()
 	{
-		return $this->adresseLivraison;
+		return $this->adresse_livraison;
 	}
 	public function getDate()
 	{
@@ -35,7 +35,7 @@ class Commandes
 	}
 	public function getIdClient()
 	{
-		return $this->idClient;
+		return $this->id_client;
 	}
 
 	public function setNom($nom)
@@ -50,13 +50,13 @@ class Commandes
 	{
 		$this->email = $email;
 	}
-	public function setAdresseLivraison($adresseLivraison)
+	public function setAdresseLivraison($adresse_livraison)
 	{
-		$this->adresseLivraison;
+		$this->adresse_livraison;
 	}
-	public function setIdClient($idClient)
+	public function setIdClient($id_client)
 	{
-		$this->idClient;
+		$this->id_client;
 	}
 
 }

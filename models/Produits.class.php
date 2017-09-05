@@ -2,9 +2,9 @@
 class Produits
 {
 	private $id;
-	private $nomProduit;
+	private $nom_produit;
 	private $image;
-	private $descriptionProduit;
+	private $description_produit;
 	private $prix;
 	private $quantite;
 	private $couleur;
@@ -16,7 +16,7 @@ class Produits
 	}
 	public function getNomProduit()
 	{
-		return $this->nomProduit;
+		return $this->nom_produit;
 	}
 	public function getImage()
 	{
@@ -24,7 +24,7 @@ class Produits
 	}
 	public function getDescriptionProduit()
 	{
-		return $this->descriptionProduit;
+		return $this->description_produit;
 	}
 	public function getPrix()
 	{
@@ -45,17 +45,17 @@ class Produits
 
 
 
-	public function setNomProduit($nomProduit)
+	public function setNomProduit($nom_produit)
 	{
-		$this->nomProduit = $nomProduit;
+		$this->nom_produit = $nom_produit;
 	}
 	public function setImage($image)
 	{
 		$this->image = $image;
 	}
-	public function setDescriptionProduit($descriptionProduit)
+	public function setDescriptionProduit($description_produit)
 	{
-		$this->descriptionProduit = $descriptionProduit;
+		$this->description_produit = $description_produit;
 	}
 	public function setPrix($prix)
 	{

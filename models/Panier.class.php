@@ -2,8 +2,8 @@
 class Panier
 {
 	private $id;
-	private $idCommande;
-	private $idProduit;
+	private $id_commande;
+	private $id_produit;
 
 	public function getId()
 	{
@@ -11,23 +11,22 @@ class Panier
 	}
 	public function getIdCommande()
 	{
-		return $this->idCommande;
+		return $this->id_commande;
 	}
-	public function getProduit()
+	public function getIdProduit()
 	{
-		return $this->produit;
+		return $this->id_produit;
 	}
 		
 
-	public function setIdCommande($idCommande)
+	public function setIdCommande($id_commande)
 	{
-		$this->idCommande = $idCommande;
+		$this->id_commande = $id_commande;
 	}
-	public function setProduit($Produit)
+	public function setIdProduit($id_produit)
 	{
-		$this->produit = $Produit;
+		$this->id_produit = $id_produit;
 	}
 	
-
 }
 ?>
