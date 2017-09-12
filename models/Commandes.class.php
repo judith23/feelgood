@@ -96,5 +96,29 @@ class Commandes
 		$this->statut = $statut;
 	}
 
+	public function ajoutProduit(Produits $produit)
+	{
+		$manager = new CommandesManager($this->pdo);
+		$manager->ajoutProduit($this, $produit);
+	}
+
+	public function getProduits()
+	{
+		$manager = new ProduitsManager($this->pdo);
+		return $manager->findByCommande($this);
+	}
+
+	public function getPrix()
+	{
+		$prix = 0;
+		$manager = new ProduitsManager($this->pdo);
+		$produits = $manager->findByCommande($this);
+		foreach ($produits AS $produit)
+		{
+			$prix += $produit->getPrix();
+		}
+		return $prix;
+	}
+
 }
 ?>

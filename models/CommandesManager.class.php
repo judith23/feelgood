@@ -38,9 +38,9 @@ class CommandesManager
 	public function create(Clients $client)
 	{
 		$commande = new Commandes($this->pdo);
-		$commande->setNom($nom);
-		$commande->setPrenom($prenom);
-		$commande->setEmail($email);
+		$commande->setNom($client->getNom());
+		$commande->setPrenom($client->getPrenom());
+		$commande->setEmail($client->getEmail());
 		$commande->setClient($client);
 		// $commande->setStatut($statut);
 
@@ -70,6 +70,15 @@ class CommandesManager
 						$commande->getAdresseLivraison(),
 						$commande->getIdClient(),
 						$commande->getStatut()]);
+		return $this->findById($commande->getId());
+	}
+
+	public function ajoutProduit(Commandes $commande, Produits $produit)
+	{
+		$sql = "INSERT INTO panier (id_commande, id_produit) VALUES(?, ?)";
+		$query = $this->pdo->prepare($sql);
+		$query->execute([$commande->getId(),
+						$produit->getId()]);
 		return $this->findById($commande->getId());
 	}
 	

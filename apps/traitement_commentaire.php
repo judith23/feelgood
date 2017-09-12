@@ -20,7 +20,7 @@ if (isset($_POST['action']))
 				{
 					$manager = new CommentairesManager($pdo);
 					$commentaire = $manager->create($produit, $_POST['description'], $auteur);
-					header('Location: index.php');
+					header('Location: index.php?page=produit&id='.$commentaire->getProduit()->getId());
 					exit;
 				}
 			}

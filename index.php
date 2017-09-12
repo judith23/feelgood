@@ -2,7 +2,7 @@
 
 session_start();
 
-$pdo = new PDO('mysql:host=localhost;dbname=my_website', 'root', 'troiswa', [
+$pdo = new PDO('mysql:host=192.168.1.10;dbname=my_website', 'my_website', 'my_website', [
 	PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 	PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 ]);

@@ -17,6 +17,15 @@ class ProduitsManager
 		return $produit;
 	}
 
+	public function findByCommande(Commandes $commande)
+	{
+		$sql = "SELECT produit.* FROM produit INNER JOIN panier ON panier.id_produit=produit.id WHERE id_commande=?";
+		$query = $this->pdo->prepare($sql);
+		$query->execute([$commande->getId()]);
+		$produit = $query->fetchAll(PDO::FETCH_CLASS, 'Produits', [$this->pdo]);
+		return $produit;
+	}
+
 	public function findAll()
 	{
 		$sql = "SELECT * FROM produit";

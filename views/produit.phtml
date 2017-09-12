@@ -11,7 +11,7 @@
 		</div>
 	
 	<form method="POST" action="index.php?page=panier">
-		<input type="hidden" name="id_produit" value="<?=htmlentities($produit->getId())?>">
+		<input type="hidden" name="id_produit" value="<?=intval($produit->getId())?>">
 		<button type="submit" name="action" value="ajouter"><i class="fa fa-shopping-bag" aria-hidden="true"></i>Ajouter au panier</button>
 	</form>
 		
@@ -32,7 +32,7 @@
 				<hr>
 				Ecrit par <span><?=htmlentities($commentaire->getAuteur()->getPseudo())?></span> le <span><?=htmlentities($commentaire->getDate())?></span>
 				<div>
-					<?=htmlentities($commentaire->getDescription())?>
+					<?=nl2br(htmlentities($commentaire->getDescription()))?>
 				</div>
 			</article>
 		<?php

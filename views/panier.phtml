@@ -1,10 +1,13 @@
 <h2>Ma commande</h2>
 
-<p>Mon panier</p>
+<p>Mon panier : <?=$user->getPanier()->getPrix()?> €</p>
 
-
-
-
+<?php foreach ($user->getPanier()->getProduits() AS $produit): ?>
+<fieldset>
+	<legend><?=$produit->getNomProduit()?></legend>
+	<img src="<?=$produit->getImage()?>">
+</fieldset>
+<?php endforeach; ?>
 
 
 

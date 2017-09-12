@@ -7,7 +7,6 @@ if (isset($_GET['page']) && $page == 'logout')
 	header('Location: index.php');
 	exit;
 }
-//var_dump($_POST);
 if (isset($_POST['action']))
 {
 	$action = $_POST['action'];
@@ -17,7 +16,7 @@ if (isset($_POST['action']))
 		{
 			$manager = new ClientsManager($pdo);
 			$client = $manager->create($_POST['pseudo'], $_POST['mdp'], $_POST['nom'], $_POST['prenom'], $_POST['adresse'], $_POST['ville'], $_POST['telephone'], $_POST['email']);
-			header('Location: index.php?page=client&id='.$client->getId());
+			header('Location: index.php?page=connexion');
 			exit;
 		}
 	}

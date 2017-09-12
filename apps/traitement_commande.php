@@ -1,5 +1,5 @@
 <?php
-var_dump($_POST,$_SESSION);
+// var_dump($_POST,$_SESSION);
 
 if (isset($_POST['action']))
 {
@@ -14,10 +14,13 @@ if (isset($_POST['action']))
 			{
 				$clientsManager = new ClientsManager($pdo);
 				$client = $clientsManager->findById($_SESSION['id']);
-
-				$commandesManager = new CommandesManager($pdo);
-				$panier = $client->getPanier();// id_client=? AND statut=?
-				header('Location: index.php');
+				if ($client)
+				{
+					$panier = $client->getPanier();
+					$panier->ajoutProduit($produit);
+					header('Location: index.php?page=panier');
+					exit;
+				}
 			}
 		}
 		else
