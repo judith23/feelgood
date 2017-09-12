@@ -1,17 +1,17 @@
 <div class="detail_produit">
 	<article>
-		<h2 class="nom_produit"><?=$produit->getNomProduit()?></h2>
+		<h2 class="nom_produit"><?=htmlentities($produit->getNomProduit())?></h2>
 		<img src="<?=$produit->getImage()?>"/>
 		<div>
-			<p class="description_produit">Description du produit :<br><?=$produit->getDescriptionProduit()?></p>
-			<p class="prix"><?=$produit->getPrix()?> €</p>
-			<p class="quantite"><?=$produit->getQuantite()?> pièce(s) en stock</p>
-			<p class="couleur">Couleur : <?=$produit->getCouleur()?></p>
-			<p class="gamme">Type : <?=$produit->getGamme()?></p>
+			<p class="description_produit">Description du produit :<br><?=htmlentities($produit->getDescriptionProduit())?></p>
+			<p class="prix"><?=htmlentities($produit->getPrix())?> €</p>
+			<p class="quantite"><?=htmlentities($produit->getQuantite())?> pièce(s) en stock</p>
+			<p class="couleur">Couleur : <?=htmlentities($produit->getCouleur())?></p>
+			<p class="gamme">Type : <?=htmlentities($produit->getGamme())?></p>
 		</div>
 	
 	<form method="POST" action="index.php?page=panier">
-		<input type="hidden" name="id_produit" value="<?=$produit->getId()?>">
+		<input type="hidden" name="id_produit" value="<?=htmlentities($produit->getId())?>">
 		<button type="submit" name="action" value="ajouter"><i class="fa fa-shopping-bag" aria-hidden="true"></i>Ajouter au panier</button>
 	</form>
 		
@@ -30,9 +30,9 @@
 		{?>
 			<article>
 				<hr>
-				Ecrit par <span><?=$commentaire->getAuteur()->getPseudo()?></span> le <span><?=$commentaire->getDate()?></span>
+				Ecrit par <span><?=htmlentities($commentaire->getAuteur()->getPseudo())?></span> le <span><?=htmlentities($commentaire->getDate())?></span>
 				<div>
-					<?=$commentaire->getDescription()?>
+					<?=htmlentities($commentaire->getDescription())?>
 				</div>
 			</article>
 		<?php
