@@ -11,6 +11,14 @@ class Clients
 	private $telephone;
 	private $email;
 
+	private $panier;
+
+
+	public function __construct($pdo)
+	{
+		$this->pdo = $pdo;
+	}
+
 	public function getId()
 	{
 		return $this->id;
@@ -93,7 +101,7 @@ class Clients
 	}
 	public function setTelephone($telephone)
 	{
-		if (strlen($telephone) >= 9 && strlen($telphone) <= 10)
+		if (strlen($telephone) >= 9 && strlen($telephone) <= 10)
 			$this->telephone = $telephone;
 		else
 			throw new Exception("Telephone invalide (la taille doit être compris entre 9 et 10 caractères)");
@@ -104,6 +112,18 @@ class Clients
 			$this->email = $email;
 		else
 			throw new Exception("Email invalide (la taille doit être compris entre 10 et 63 caractères)");
+	}
+
+	public function getPanier()
+	{
+		$manager = new CommandesManager($this->pdo);
+		$this->panier = $manager->findPanierByClients($this);
+		if (!$this->panier)
+		{
+			$this->panier = $manager->create($this);
+		}
+		// cherche un panier en fonction du client
+		return $this->panier;
 	}
 
 }

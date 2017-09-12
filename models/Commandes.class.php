@@ -8,6 +8,18 @@ class Commandes
 	private $adresse_livraison;
 	private $date;
 	private $id_client;
+	private $statut;
+
+	private $client;
+	
+	private $pdo;
+	
+	public function __construct($pdo)
+	{
+		$this->pdo = $pdo;
+	}
+
+	//faire la composition : $db $client setclient getclient + constructor
 
 	public function getId()
 	{
@@ -33,10 +45,25 @@ class Commandes
 	{
 		return $this->date;
 	}
-	public function getIdClient()
+	/*public function getIdClient()
 	{
 		return $this->id_client;
+	}*/
+
+	public function getClient()
+	{
+		$manager = new ClientsManager($this->pdo);
+		$this->client = $manager->findById($this->id_client);
+		return $this->client;
 	}
+
+	public function getStatut()
+	{
+		return $this->statut;
+	}
+
+
+
 
 	public function setNom($nom)
 	{
@@ -54,9 +81,19 @@ class Commandes
 	{
 		$this->adresse_livraison;
 	}
-	public function setIdClient($id_client)
+	/*public function setIdClient($id_client)
 	{
 		$this->id_client;
+	}*/
+
+	public function setClient(Clients $client)
+	{
+		$this->id_client = $client->getId();
+		$this->client = $client;
+	}
+	public function setStatut($statut)
+	{
+		$this->statut = $statut;
 	}
 
 }

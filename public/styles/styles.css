@@ -1,0 +1,191 @@
+/*GLOBAL */
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	margin: 0;
+	color: grey;
+}
+
+img {
+	max-width: 100%;
+}
+
+h1 {
+	text-align: center;
+	margin: 0;
+}
+
+h1 a {
+	font-family: 'Pacifico', cursive;
+	color: black;
+	font-size: 8.5rem;
+	font-weight: normal;
+}
+
+h2 {
+	padding-top: 20px;
+}
+
+.main {
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color:black;	
+}
+
+button {
+	background-color:black;
+	color: white;
+	border: 0;
+	padding: 10px;
+}
+
+
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: white !important;
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+
+
+/* ------------Header-------------------- */
+
+header ul {
+	list-style: none;
+	display: flex;
+	justify-content:space-around;
+	align-items:center;
+	padding-left: 0;
+	margin: 0;
+	padding-top: 80px;
+	padding-bottom: 20px;
+}
+
+header a {
+	text-decoration: none;	
+}
+
+header p {
+	text-align: center;
+	color: black;
+	font-family: 'Reenie Beanie', cursive;
+	font-size: 2rem;
+}
+
+
+/* ------------Creation client-------------------- */
+
+.createclient {
+	padding: 40px;
+}
+
+.createclient h1 {
+	text-align: center;
+	padding-bottom: 20px;
+	color: black;
+	font-size: 2rem;
+}
+
+.createclient form {
+	display: flex;
+	flex-direction:column;
+	margin: auto;
+	width  : 300px;
+}
+
+.createclient input {
+	margin-bottom: 15px;
+	height: 50px;
+}
+
+.fa {
+	font-size: 2rem;
+	color: black;
+	text-align: center;
+	padding-right: 10px;
+}
+
+
+/*------------------------- home -------------------------------*/
+
+.listeproduits {
+	display: inline-block;
+	width: 33%;
+}
+
+
+/*------------------------- Page produit -------------------------------*/
+
+.detail_produit h2 {
+	font-size: 3rem;
+	color: black;
+}
+
+.detail_produit img {
+	float: left;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}
+
+.detail_produit form{
+	padding-top: 40px;
+}
+
+.main {
+	overflow: hidden;
+	padding-bottom: 40px;
+}
+
+.prix {
+	font-size: 2rem;
+	font-style: bold;
+	color:black;
+}
+
+/*------------------------- se connecter -------------------------------*/
+
+.compte {
+	padding: 60px;
+	text-align: center;
+}
+
+.compte input {
+	height: 35px;
+}
+
+
+/*------------------------- footer -------------------------------*/
+
+footer {
+	background-color: #DBD9D9;
+	padding: 40px;
+}
+
+footer p{
+    text-align: center;
+    margin: 0 0;
+    padding: 20px 0;
+
+}
+
+.fonts{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    font-size: 3.5rem;
+
+}

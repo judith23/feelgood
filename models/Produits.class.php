@@ -10,6 +10,20 @@ class Produits
 	private $couleur;
 	private $gamme;
 
+	private $pdo;
+	private $commentaires;
+
+	public function __construct($pdo)
+	{
+		$this->pdo = $pdo;
+	}
+
+	public function getCommentaires()
+	{
+		$manager = new CommentairesManager($this->pdo);
+		$this->commentaires = $manager->findByProduit($this);
+		return $this->commentaires;
+	}
 	public function getId()
 	{
 		return $this->id;

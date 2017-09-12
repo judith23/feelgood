@@ -1,4 +1,5 @@
 <?php
+// osef
 class PanierManager
 {
 	private $PDO;

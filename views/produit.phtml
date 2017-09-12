@@ -1,0 +1,41 @@
+<div class="detail_produit">
+	<article>
+		<h2 class="nom_produit"><?=$produit->getNomProduit()?></h2>
+		<img src="<?=$produit->getImage()?>"/>
+		<div>
+			<p class="description_produit">Description du produit : <?=$produit->getDescriptionProduit()?></p>
+			<p class="prix"><?=$produit->getPrix()?> €</p>
+			<p class="quantite"><?=$produit->getQuantite()?> pièce(s) en stock</p>
+			<p class="couleur">Couleur : <?=$produit->getCouleur()?></p>
+			<p class="gamme">Type : <?=$produit->getGamme()?></p>
+		</div>
+	
+	<form method="POST" action="index.php?page=panier">
+		<input type="hidden" name="id_produit" value="<?=$produit->getId()?>">
+		<button type="submit" name="action" value="ajouter">Ajouter au panier</button>
+	</form>
+		
+	</article class="description">
+			
+		<form method="POST">
+		<input type="hidden" name="id_produit" value="<?=$produit->getId()?>">
+		<div>
+			<textarea name="description" placeholder="Avis"></textarea>
+		</div>
+		<button name="action" value="create">Envoyer</button>
+	</form>
+	
+	<?php
+		foreach ($produit->getCommentaires() AS $commentaire)
+		{?>
+			<article>
+				<hr>
+				Ecrit par <span><?=$commentaire->getAuteur()->getPseudo()?></span> le <span><?=$commentaire->getDate()?></span>
+				<div>
+					<?=$commentaire->getDescription()?>
+				</div>
+			</article>
+		<?php
+		}
+	?>
+</div>
