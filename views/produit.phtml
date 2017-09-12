@@ -3,7 +3,7 @@
 		<h2 class="nom_produit"><?=$produit->getNomProduit()?></h2>
 		<img src="<?=$produit->getImage()?>"/>
 		<div>
-			<p class="description_produit">Description du produit : <?=$produit->getDescriptionProduit()?></p>
+			<p class="description_produit">Description du produit :<br><?=$produit->getDescriptionProduit()?></p>
 			<p class="prix"><?=$produit->getPrix()?> €</p>
 			<p class="quantite"><?=$produit->getQuantite()?> pièce(s) en stock</p>
 			<p class="couleur">Couleur : <?=$produit->getCouleur()?></p>
@@ -12,7 +12,7 @@
 	
 	<form method="POST" action="index.php?page=panier">
 		<input type="hidden" name="id_produit" value="<?=$produit->getId()?>">
-		<button type="submit" name="action" value="ajouter">Ajouter au panier</button>
+		<button type="submit" name="action" value="ajouter"><i class="fa fa-shopping-bag" aria-hidden="true"></i>Ajouter au panier</button>
 	</form>
 		
 	</article class="description">

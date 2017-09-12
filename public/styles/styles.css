@@ -141,6 +141,10 @@ header p {
 	padding-bottom: 20px;
 }
 
+.detail_produit .fa {
+	color: white;
+}
+
 .detail_produit form{
 	padding-top: 40px;
 }
@@ -148,6 +152,12 @@ header p {
 .main {
 	overflow: hidden;
 	padding-bottom: 40px;
+}
+
+.description_produit {
+	font-size: 1rem;
+	line-height: 2;
+
 }
 
 .prix {
