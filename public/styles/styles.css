@@ -33,7 +33,7 @@ h1 a {
 }
 
 h2 {
-	padding-top: 20px;
+	padding-top: 40px;
 }
 
 .main {
@@ -83,7 +83,7 @@ header p {
 	text-align: center;
 	color: black;
 	font-family: 'Reenie Beanie', cursive;
-	font-size: 2rem;
+	font-size: 2.5rem;
 }
 
 
@@ -171,7 +171,7 @@ header p {
 /*------------------------- footer -------------------------------*/
 
 footer {
-	background-color: #DBD9D9;
+	background-color: black;
 	padding: 40px;
 }
 
@@ -187,5 +187,10 @@ footer p{
     justify-content: space-around;
     padding: 10px 0;
     font-size: 3.5rem;
+    color: white;
+}
 
+.fonts .fa {
+	color: white;
+	font-size: 2.5rem;
 }
