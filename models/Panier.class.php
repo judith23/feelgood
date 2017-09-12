@@ -5,6 +5,8 @@ class Panier
 	private $id_commande;
 	private $id_produit;
 
+	//a oublier
+
 	public function getId()
 	{
 		return $this->id;
